@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PathSnap Evaluator</title>
+<!-- Leaflet is bundled locally so the UI works even without internet -->
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<script src="vendor/leaflet/leaflet.js"></script>
+<style>
+  :root { --bg:#f6f7f9; --panel:#fff; --ink:#1d2330; --muted:#667085; --line:#e3e6eb;
+          --accent:#1f6feb; --good:#1a7f37; --bad:#c62828; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:12px 16px; background:var(--panel); border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  header h1 { font-size:18px; margin:0 12px 0 0; }
+  input, select, button { font:inherit; padding:6px 10px; border:1px solid var(--line); border-radius:6px; background:#fff; }
+  input#api { width:230px; }
+  button { background:var(--accent); color:#fff; border-color:var(--accent); cursor:pointer; }
+  button.secondary { background:#fff; color:var(--ink); border-color:var(--line); }
+  button:disabled { opacity:.5; cursor:wait; }
+  #status { font-size:13px; color:var(--muted); }
+  #status.ok { color:var(--good); } #status.err { color:var(--bad); }
+  main { display:grid; grid-template-columns: 1fr 380px; height: calc(100vh - 58px); }
+  #map { height:100%; }
+  aside { background:var(--panel); border-left:1px solid var(--line); overflow:auto; padding:14px; }
+  h2 { font-size:14px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:16px 0 8px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; font-variant-numeric: tabular-nums; }
+  th, td { padding:5px 6px; border-bottom:1px solid var(--line); text-align:right; }
+  th:first-child, td:first-child { text-align:left; }
+  .big { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .tile { border:1px solid var(--line); border-radius:8px; padding:8px 10px; }
+  .tile .v { font-size:22px; font-weight:600; }
+  .tile .l { font-size:12px; color:var(--muted); }
+  .legend { background:#fff; padding:8px 10px; border-radius:6px; font-size:12px; line-height:1.6; box-shadow:0 1px 4px rgba(0,0,0,.2); }
+  .sw { display:inline-block; width:18px; height:4px; vertical-align:middle; margin-right:6px; }
+  pre { font-size:11px; background:#f2f4f7; padding:8px; border-radius:6px; white-space:pre-wrap; max-height:220px; overflow:auto; }
+  @media (max-width: 900px) { main { grid-template-columns:1fr; height:auto; } #map { height:60vh; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>PathSnap Evaluator</h1>
+  <label>API <input id="api" placeholder="http://192.168.x.x:8000"></label>
+  <button class="secondary" id="connect">Connect</button>
+  <select id="trip" disabled><option>— trips —</option></select>
+  <button id="go" disabled>Predict route</button>
+  <label style="font-size:12px"><input type="checkbox" id="fresh" checked> Run fresh inference</label>
+  <span id="status">not connected</span>
+</header>
+<main>
+  <div id="map"></div>
+  <aside>
+    <h2>Result</h2>
+    <div id="summary" class="big"><div class="tile"><div class="l">Select a trip and press Predict</div></div></div>
+    <p id="release" style="font-size:12px;color:var(--muted)"></p>
+    <h2>Metrics (computed on the API server)</h2>
+    <p id="method" style="font-size:12px;color:var(--muted)">Scores use approximate reference alignment. No reference roads are sent to this UI.</p>
+    <table id="metrics"><thead><tr><th>Metric</th><th>HMM + Viterbi</th><th>Classifier only</th></tr></thead><tbody></tbody></table>
+    <h2>Timing (server)</h2>
+    <table id="timing"><tbody></tbody></table>
+    <h2>Server log</h2>
+    <pre id="log">—</pre>
+  </aside>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const map = L.map("map", { preferCanvas: true }).setView([55.75, 37.62], 11);
+// background tiles need internet; routes/points still draw without them
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  { maxZoom: 19, attribution: "&copy; OpenStreetMap" }).addTo(map);
+map.getContainer().style.background = "#eef1f4";
+const layers = {
+  "Candidate roads": L.layerGroup().addTo(map),
+  "GPS observations": L.layerGroup().addTo(map),
+  "Classifier-only route": L.layerGroup(),
+  "Predicted route (HMM)": L.layerGroup().addTo(map),
+};
+L.control.layers(null, layers, { collapsed: false }).addTo(map);
+const legend = L.control({ position: "bottomleft" });
+legend.onAdd = () => { const d = L.DomUtil.create("div", "legend"); d.innerHTML =
+  '<span class="sw" style="background:#2563eb;height:8px;width:8px;border-radius:50%"></span>GPS observation<br>' +
+  '<span class="sw" style="background:#16a34a"></span>Predicted route (HMM)<br>' +
+  '<span class="sw" style="background:#f97316"></span>Classifier-only route<br>' +
+  '<span class="sw" style="background:#9ca3af"></span>Candidate roads'; return d; };
+legend.addTo(map);
+
+let API = "";
+const queryAPI = new URLSearchParams(location.search).get("api");
+try { $("api").value = queryAPI || localStorage.getItem("pathsnap_api") || "http://127.0.0.1:8000"; } catch (e) { $("api").value = queryAPI || "http://127.0.0.1:8000"; }
+let ready = false;
+function busy(value) {
+  $("connect").disabled = $("api").disabled = value;
+  $("trip").disabled = $("go").disabled = value || !ready;
+}
+
+function setStatus(msg, cls = "") { $("status").textContent = msg; $("status").className = cls; }
+
+async function call(path, opts) {
+  const r = await fetch(API + path, { ...opts, signal: AbortSignal.timeout(300000) });
+  if (!r.ok) throw new Error(`${r.status} ${(await r.text()).slice(0, 200)}`);
+  return r.json();
+}
+
+$("connect").onclick = async () => {
+  ready = false; busy(true);
+  API = $("api").value.trim().replace(/\/+$/, "");
+  try { localStorage.setItem("pathsnap_api", API); } catch (e) {}
+  setStatus("connecting…");
+  try {
+    const h = await call("/health");
+    const t = await call("/trips");
+    $("trip").replaceChildren(...t.trips.map(x => new Option(`${x.trip_id} · ${x.n_observations} pts · ${(x.duration_s/60).toFixed(0)} min`, x.trip_id)));
+    ready = h.model_loaded && t.trips.length > 0;
+    setStatus(`connected · ${t.trips.length} trips · model ${h.model_loaded ? "loaded" : "NOT loaded"}`, h.model_loaded ? "ok" : "err");
+    refreshLog();
+  } catch (e) { setStatus("cannot reach API: " + e.message + ". Use Laptop 1's LAN IP; check same Wi-Fi and port 8000.", "err"); }
+  finally { busy(false); }
+};
+
+const pct = (v) => v == null ? "—" : (100 * v).toFixed(1) + "%";
+const ROWS = [
+  ["Point accuracy (Top-1)", "point_accuracy", pct],
+  ["Point macro F1", "point_macro_f1", pct],
+  ["Route precision", "route_precision", pct],
+  ["Route recall", "route_recall", pct],
+  ["Route F1", "route_f1", pct],
+  ["Route continuity", "route_continuity", pct],
+  ["Route pieces", "route_pieces", (v) => v ?? "—"],
+  ["Candidate miss rate", "candidate_miss_rate", pct],
+];
+
+$("go").onclick = async () => {
+  const id = $("trip").value;
+  busy(true); setStatus(`predicting trip ${id}…`);
+  try {
+    const t0 = performance.now();
+    const d = await call("/predict", { method: "POST", headers: { "Content-Type": "application/json" },
+                                        body: JSON.stringify({ trip_id: id, fresh: $("fresh").checked }) });
+    draw(d);
+    setStatus(`trip ${id} done in ${((performance.now() - t0) / 1000).toFixed(1)} s${d.cached ? " (cached)" : ""}`, "ok");
+  } catch (e) { setStatus("prediction failed: " + e.message, "err"); }
+  busy(false); refreshLog();
+};
+
+function draw(d) {
+  $("release").textContent = d.release ? `Release: ${d.release.release_id} · model ${d.release.model_sha256.slice(0,12)}` : 'Release identity unavailable';
+  Object.values(layers).forEach(l => l.clearLayers());
+  // API geometry is GeoJSON (lon, lat); L.geoJSON swaps to Leaflet's (lat, lon)
+  L.geoJSON(d.candidate_roads_geojson, { style: { color: "#9ca3af", weight: 2, opacity: .6 } }).addTo(layers["Candidate roads"]);
+  L.geoJSON(d.classifier_route_geojson, { style: { color: "#f97316", weight: 3, dashArray: "6 6" } }).addTo(layers["Classifier-only route"]);
+  L.geoJSON(d.route_geojson, { style: { color: "#16a34a", weight: 5, opacity: .85 } }).addTo(layers["Predicted route (HMM)"]);
+  const gps = d.gps_lonlat.map(([lon, lat]) => [lat, lon]);
+  const step = Math.max(1, Math.floor(gps.length / 3000));
+  gps.forEach((p, i) => { if (i % step === 0) L.circleMarker(p, { radius: 2.5, color: "#2563eb", weight: 0, fillOpacity: .7 })
+    .bindTooltip(`obs ${i} → arc ${d.observation_arc_ids[i]}`).addTo(layers["GPS observations"]); });
+  L.circleMarker(gps[0], { radius: 7, color: "#000", fillColor: "#22c55e", fillOpacity: 1 }).bindTooltip("start").addTo(layers["GPS observations"]);
+  L.circleMarker(gps[gps.length - 1], { radius: 7, color: "#000", fillColor: "#ef4444", fillOpacity: 1 }).bindTooltip("end").addTo(layers["GPS observations"]);
+  map.fitBounds(L.latLngBounds(gps), { padding: [20, 20] });
+
+  const m = d.metrics && d.metrics.hmm ? d.metrics : null, h = m ? m.hmm : {}, c = m ? m.classifier_only : {};
+  $("method").textContent = `Reference label method: ${d.metrics?.label_method || "unavailable"}. These are surrogate-label scores; route F1 measures length-weighted arc-set overlap, not route order.`;
+  $("summary").innerHTML = `
+    <div class="tile"><div class="v">${pct(h.point_accuracy)}</div><div class="l">Point accuracy (HMM)</div></div>
+    <div class="tile"><div class="v">${pct(h.route_f1)}</div><div class="l">Route F1 (HMM)</div></div>
+    <div class="tile"><div class="v">${d.n_observations}</div><div class="l">GPS points · trip ${d.trip_id}</div></div>
+    <div class="tile"><div class="v">${(d.timing_ms.prediction_total/1000).toFixed(2)} s</div><div class="l">Prediction time</div></div>`;
+  $("metrics").querySelector("tbody").innerHTML = m ? ROWS.map(([n, k, f]) =>
+    `<tr><td>${n}</td><td>${f(h[k])}</td><td>${f(c[k])}</td></tr>`).join("")
+    : `<tr><td colspan="3">No reference route on server for this trip</td></tr>`;
+  $("timing").querySelector("tbody").innerHTML = Object.entries(d.timing_ms)
+    .map(([k, v]) => `<tr><td>${k}</td><td>${v.toFixed(0)} ms</td></tr>`).join("") +
+    `<tr><td>model</td><td>${d.model}</td></tr>` +
+    (d.warnings.length ? `<tr><td>warnings</td><td>${d.warnings.join("<br>")}</td></tr>` : "");
+}
+
+async function refreshLog() {
+  try { const r = await call("/logs/recent?n=15"); $("log").textContent = r.lines.join("\n"); } catch (e) {}
+}
+</script>
+</body>
+</html>

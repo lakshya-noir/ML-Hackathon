@@ -1,0 +1,19 @@
+{
+  "release_id": "pathsnap-monotone-v1",
+  "model_dir": "artifacts/models/final_monotone_v1",
+  "decoder_config": "artifacts/decoder_config.json",
+  "model_sha256": "457a1520c1d9e9da2297a946d1d588f8a564dc7ef6c384240bff8bba83e1b3dd",
+  "decoder_config_sha256": "fba4744deb30176013f6b226c61c96bf6892d7c3599252a5791293968e94f4fc",
+  "source_experiment": "outputs/model-improvement/20261118-120758",
+  "label_method": "monotone route alignment; geometric surrogate",
+  "training": "80 training trips; up to 1000 observations per trip; grouped CV selected model",
+  "decoder_policy": "fixed documented defaults; no separate decoder tuning claimed",
+  "packages": {
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "fastapi": "0.163.2",
+    "uvicorn": "0.54.0"
+  }
+}

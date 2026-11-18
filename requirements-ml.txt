@@ -1,0 +1,8 @@
+# Versions used for the initial 18 November experiment; Python 3.14.
+numpy==2.5.5
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+optuna==5.1.0
+folium==1.0.0
+matplotlib==3.11.2

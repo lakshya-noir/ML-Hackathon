@@ -1,0 +1,3 @@
+# Complete pinned inference and experiment environment.
+-r requirements-demo.txt
+

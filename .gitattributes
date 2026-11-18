@@ -1,0 +1,10 @@
+# Preserve frozen config bytes on Windows checkouts.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.joblib -text
+*.sqlite3 -text
+*.png -text
+*.jpg -text
+*.pdf -text
+*.docx -text
+*.zip -text

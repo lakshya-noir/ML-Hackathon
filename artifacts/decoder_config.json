@@ -1,0 +1,11 @@
+{
+  "sigma_m": 10.0,
+  "beta_m": 5.0,
+  "clf_weight": 0.5,
+  "unreachable_logp": -40.0,
+  "gap_s": 10.0,
+  "outlier_m": 120.0,
+  "backtrack_tol_m": 15.0,
+  "search_base_m": 400.0,
+  "search_cap_m": 15000.0
+}
