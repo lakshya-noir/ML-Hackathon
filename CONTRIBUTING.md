@@ -1,10 +1,8 @@
 # Contributions and Git identity
 
-Current team: Lakshya, Nakul and Nikhil. Lakshya handles data/model work, final integration and UI delivery; Nakul handles the directed graph, HMM/Viterbi and backend; Nikhil supports data analysis, review and verification. Responsibilities describe current ownership and do not rewrite historical authorship.
+Our team consists of Lakshya, Nakul, and Nikhil. Lakshya handles data and model work, final integration, and UI delivery. Nakul manages the directed graph, HMM/Viterbi, and backend. Nikhil supports data analysis, review, and verification. These responsibilities reflect our current division of labor, and they do not alter historical authorship.
 
-Codex and Claude Code assisted implementation, debugging and documentation. Members are responsible for reviewing and understanding the submission.
-
-Before genuine new work, each member configures their own verified Git identity:
+Before tackling any new code, each of us configures our local Git identity:
 
 ```bash
 git config --local user.name "YOUR ACTUAL NAME"
@@ -12,4 +10,4 @@ git config --local user.email "YOUR VERIFIED GITHUB EMAIL OR GITHUB NOREPLY EMAI
 git var GIT_AUTHOR_IDENT
 ```
 
-Review and commit actual changes under their real author. Preserve historical provenance; copying a file or being responsible for pushing it does not establish original authorship. A new repository does not automatically correct historical email associations. Coordinate any verified identity correction with the actual author before rewriting shared history.
+We commit all real changes under our respective authors. We preserve historical provenance, meaning that copying a file or pushing it to a remote branch does not establish original authorship. A fresh repository also does not automatically fix past email associations, so we always coordinate any identity corrections with the actual author before rewriting shared history.
