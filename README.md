@@ -103,6 +103,6 @@ Training/report commands and cache/study precautions are in [REPRODUCING.md](doc
 
 ## Team and assistance
 
-Team: Lakshya, Nakul and Nikhil. [CONTRIBUTING.md](CONTRIBUTING.md) explains responsibilities and genuine contribution recording. Codex and Claude Code assisted implementation, debugging and documentation; actual experiments ran locally. Members remain responsible for reviewing and understanding the submission. Preserve authentic authorship; do not invent commits or results.
+Team: Lakshya - PES2UG24CS250, Nakul - PES2UG24CS298, Nikhil - PES2UG24CS253 and Mahesh - PES2UG24CS258. [CONTRIBUTING.md](CONTRIBUTING.md) explains responsibilities and genuine contribution recording. Codex and Claude Code assisted implementation, debugging and documentation; actual experiments ran locally. Members remain responsible for reviewing and understanding the submission. Preserve authentic authorship; do not invent commits or results.
 
 Leaflet 1.9.4 is bundled under its [BSD 2-Clause license](ui/vendor/leaflet/LICENSE). Maps attribute OpenStreetMap. Reserved references never enter prediction or the evaluator UI.
