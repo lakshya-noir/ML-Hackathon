@@ -1,0 +1,840 @@
+{
+  "label_method": "nearest reference-route geometry surrogate; not verified pointwise ground truth",
+  "seed": 42,
+  "max_observations_per_trip": 200,
+  "feature_names": [
+    "distance_m",
+    "heading_cos",
+    "heading_abs_cos",
+    "segment_length_m",
+    "projection_fraction",
+    "speed_mps",
+    "previous_distance_m",
+    "next_distance_m",
+    "distance_rank"
+  ],
+  "folds": [
+    {
+      "train_trips": [
+        "00000002",
+        "00000003",
+        "00000004",
+        "00000005",
+        "00000008",
+        "00000010",
+        "00000011",
+        "00000012",
+        "00000013",
+        "00000018",
+        "00000021",
+        "00000022",
+        "00000024",
+        "00000025",
+        "00000026",
+        "00000027",
+        "00000029",
+        "00000031",
+        "00000036",
+        "00000037",
+        "00000039",
+        "00000041",
+        "00000042",
+        "00000043",
+        "00000044",
+        "00000045",
+        "00000046",
+        "00000047",
+        "00000048",
+        "00000050",
+        "00000051",
+        "00000054",
+        "00000055",
+        "00000058",
+        "00000061",
+        "00000063",
+        "00000064",
+        "00000066",
+        "00000068",
+        "00000070",
+        "00000072",
+        "00000074",
+        "00000075",
+        "00000078",
+        "00000079",
+        "00000080",
+        "00000082",
+        "00000083",
+        "00000085",
+        "00000086",
+        "00000088",
+        "00000090",
+        "00000093",
+        "00000099"
+      ],
+      "validation_trips": [
+        "00000001",
+        "00000006",
+        "00000014",
+        "00000016",
+        "00000019",
+        "00000020",
+        "00000028",
+        "00000032",
+        "00000033",
+        "00000034",
+        "00000035",
+        "00000038",
+        "00000053",
+        "00000057",
+        "00000060",
+        "00000062",
+        "00000069",
+        "00000071",
+        "00000081",
+        "00000084",
+        "00000089",
+        "00000092",
+        "00000095",
+        "00000096",
+        "00000097",
+        "00000098"
+      ]
+    },
+    {
+      "train_trips": [
+        "00000001",
+        "00000002",
+        "00000003",
+        "00000004",
+        "00000005",
+        "00000006",
+        "00000012",
+        "00000013",
+        "00000014",
+        "00000016",
+        "00000018",
+        "00000019",
+        "00000020",
+        "00000022",
+        "00000025",
+        "00000028",
+        "00000031",
+        "00000032",
+        "00000033",
+        "00000034",
+        "00000035",
+        "00000036",
+        "00000037",
+        "00000038",
+        "00000039",
+        "00000043",
+        "00000045",
+        "00000046",
+        "00000047",
+        "00000050",
+        "00000053",
+        "00000055",
+        "00000057",
+        "00000058",
+        "00000060",
+        "00000061",
+        "00000062",
+        "00000064",
+        "00000066",
+        "00000069",
+        "00000071",
+        "00000075",
+        "00000081",
+        "00000083",
+        "00000084",
+        "00000089",
+        "00000090",
+        "00000092",
+        "00000095",
+        "00000096",
+        "00000097",
+        "00000098",
+        "00000099"
+      ],
+      "validation_trips": [
+        "00000008",
+        "00000010",
+        "00000011",
+        "00000021",
+        "00000024",
+        "00000026",
+        "00000027",
+        "00000029",
+        "00000041",
+        "00000042",
+        "00000044",
+        "00000048",
+        "00000051",
+        "00000054",
+        "00000063",
+        "00000068",
+        "00000070",
+        "00000072",
+        "00000074",
+        "00000078",
+        "00000079",
+        "00000080",
+        "00000082",
+        "00000085",
+        "00000086",
+        "00000088",
+        "00000093"
+      ]
+    },
+    {
+      "train_trips": [
+        "00000001",
+        "00000006",
+        "00000008",
+        "00000010",
+        "00000011",
+        "00000014",
+        "00000016",
+        "00000019",
+        "00000020",
+        "00000021",
+        "00000024",
+        "00000026",
+        "00000027",
+        "00000028",
+        "00000029",
+        "00000032",
+        "00000033",
+        "00000034",
+        "00000035",
+        "00000038",
+        "00000041",
+        "00000042",
+        "00000044",
+        "00000048",
+        "00000051",
+        "00000053",
+        "00000054",
+        "00000057",
+        "00000060",
+        "00000062",
+        "00000063",
+        "00000068",
+        "00000069",
+        "00000070",
+        "00000071",
+        "00000072",
+        "00000074",
+        "00000078",
+        "00000079",
+        "00000080",
+        "00000081",
+        "00000082",
+        "00000084",
+        "00000085",
+        "00000086",
+        "00000088",
+        "00000089",
+        "00000092",
+        "00000093",
+        "00000095",
+        "00000096",
+        "00000097",
+        "00000098"
+      ],
+      "validation_trips": [
+        "00000002",
+        "00000003",
+        "00000004",
+        "00000005",
+        "00000012",
+        "00000013",
+        "00000018",
+        "00000022",
+        "00000025",
+        "00000031",
+        "00000036",
+        "00000037",
+        "00000039",
+        "00000043",
+        "00000045",
+        "00000046",
+        "00000047",
+        "00000050",
+        "00000055",
+        "00000058",
+        "00000061",
+        "00000064",
+        "00000066",
+        "00000075",
+        "00000083",
+        "00000090",
+        "00000099"
+      ]
+    }
+  ],
+  "models": {
+    "logistic": {
+      "top1_accuracy": 0.8515,
+      "observation_arc_macro_f1": 0.7577345743753484,
+      "conditional_candidate_log_loss": 0.6035791044582959,
+      "candidate_miss_rate": 0.002,
+      "observations": 2000,
+      "candidate_binary_macro_f1": 0.894791756629762,
+      "candidate_binary_log_loss": 0.15308587786870406,
+      "cv_candidate_binary_macro_f1": [
+        0.8793512024773988,
+        0.870925754393904,
+        0.8888829750867249
+      ],
+      "mean_cv_candidate_binary_macro_f1": 0.8797199773193425,
+      "training_including_cv_seconds": 0.11152616600156762,
+      "scoring_seconds": 0.019111375004285946,
+      "configuration": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('logisticregression',\n                 LogisticRegression(max_iter=400, random_state=42))])"
+    },
+    "gaussian_nb": {
+      "top1_accuracy": 0.841,
+      "observation_arc_macro_f1": 0.757996400580434,
+      "conditional_candidate_log_loss": 0.8807556251067419,
+      "candidate_miss_rate": 0.002,
+      "observations": 2000,
+      "candidate_binary_macro_f1": 0.7861417626329776,
+      "candidate_binary_log_loss": 0.5662877990187686,
+      "cv_candidate_binary_macro_f1": [
+        0.7786810331297362,
+        0.8092194165876202,
+        0.776845394061922
+      ],
+      "mean_cv_candidate_binary_macro_f1": 0.7882486145930928,
+      "training_including_cv_seconds": 0.054182207997655496,
+      "scoring_seconds": 0.01987308399111498,
+      "configuration": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('gaussiannb', GaussianNB())])"
+    },
+    "decision_tree": {
+      "top1_accuracy": 0.8545,
+      "observation_arc_macro_f1": 0.7632062838387504,
+      "conditional_candidate_log_loss": 0.6599727026090851,
+      "candidate_miss_rate": 0.002,
+      "observations": 2000,
+      "candidate_binary_macro_f1": 0.9110307792242602,
+      "candidate_binary_log_loss": 0.18387313195219565,
+      "cv_candidate_binary_macro_f1": [
+        0.8999135205304332,
+        0.8842893558335087,
+        0.9026582613342464
+      ],
+      "mean_cv_candidate_binary_macro_f1": 0.8956203792327294,
+      "training_including_cv_seconds": 1.362380624996149,
+      "scoring_seconds": 0.019018666993360966,
+      "configuration": "DecisionTreeClassifier(max_depth=10, min_samples_leaf=20, random_state=42)"
+    },
+    "random_forest": {
+      "top1_accuracy": 0.8555,
+      "observation_arc_macro_f1": 0.778630288403721,
+      "conditional_candidate_log_loss": 0.41378643666956416,
+      "candidate_miss_rate": 0.002,
+      "observations": 2000,
+      "candidate_binary_macro_f1": 0.9121360675903489,
+      "candidate_binary_log_loss": 0.11228130078497868,
+      "cv_candidate_binary_macro_f1": [
+        0.9044099062950561,
+        0.8900488986692421,
+        0.9089317559208516
+      ],
+      "mean_cv_candidate_binary_macro_f1": 0.9011301869617165,
+      "training_including_cv_seconds": 5.9755619170027785,
+      "scoring_seconds": 0.032584207991021685,
+      "configuration": "RandomForestClassifier(max_depth=14, min_samples_leaf=5, n_jobs=-1,\n                       random_state=42)"
+    },
+    "hist_gradient_boosting": {
+      "top1_accuracy": 0.8585,
+      "observation_arc_macro_f1": 0.7827573373596102,
+      "conditional_candidate_log_loss": 0.3968156664106097,
+      "candidate_miss_rate": 0.002,
+      "observations": 2000,
+      "candidate_binary_macro_f1": 0.9159470415414246,
+      "candidate_binary_log_loss": 0.11118853638495493,
+      "cv_candidate_binary_macro_f1": [
+        0.9043307184377487,
+        0.8901471598376505,
+        0.9102534706029173
+      ],
+      "mean_cv_candidate_binary_macro_f1": 0.901577116292772,
+      "training_including_cv_seconds": 1.0035603340074886,
+      "scoring_seconds": 0.02682104099949356,
+      "configuration": "HistGradientBoostingClassifier(max_leaf_nodes=15, random_state=42)"
+    }
+  },
+  "data_quality": {
+    "train": [
+      {
+        "trip_id": "00000001",
+        "mean_reference_offset_m": 5.027277644418873,
+        "ambiguous_fraction": 0.12775665399239544
+      },
+      {
+        "trip_id": "00000002",
+        "mean_reference_offset_m": 33.82568733749901,
+        "ambiguous_fraction": 0.3332873118873395
+      },
+      {
+        "trip_id": "00000003",
+        "mean_reference_offset_m": 5.443040185671732,
+        "ambiguous_fraction": 0.15468940316686966
+      },
+      {
+        "trip_id": "00000004",
+        "mean_reference_offset_m": 11.61109299845594,
+        "ambiguous_fraction": 0.19454887218045114
+      },
+      {
+        "trip_id": "00000005",
+        "mean_reference_offset_m": 5.367500215409153,
+        "ambiguous_fraction": 0.03732057416267943
+      },
+      {
+        "trip_id": "00000006",
+        "mean_reference_offset_m": 5.380315420697962,
+        "ambiguous_fraction": 0.593103448275862
+      },
+      {
+        "trip_id": "00000008",
+        "mean_reference_offset_m": 9.903107130093629,
+        "ambiguous_fraction": 0.44681538958939543
+      },
+      {
+        "trip_id": "00000010",
+        "mean_reference_offset_m": 6.176822576860552,
+        "ambiguous_fraction": 0.3448911840649207
+      },
+      {
+        "trip_id": "00000011",
+        "mean_reference_offset_m": 6.026542368504267,
+        "ambiguous_fraction": 0.9996463932107497
+      },
+      {
+        "trip_id": "00000012",
+        "mean_reference_offset_m": 6.184763722320336,
+        "ambiguous_fraction": 0.04975124378109453
+      },
+      {
+        "trip_id": "00000013",
+        "mean_reference_offset_m": 4.865285269885852,
+        "ambiguous_fraction": 0.11976744186046512
+      },
+      {
+        "trip_id": "00000014",
+        "mean_reference_offset_m": 5.741223666990126,
+        "ambiguous_fraction": 0.31026785714285715
+      },
+      {
+        "trip_id": "00000016",
+        "mean_reference_offset_m": 9.211902079820634,
+        "ambiguous_fraction": 0.35172413793103446
+      },
+      {
+        "trip_id": "00000018",
+        "mean_reference_offset_m": 4.913603659853759,
+        "ambiguous_fraction": 0.29023746701846964
+      },
+      {
+        "trip_id": "00000019",
+        "mean_reference_offset_m": 8.22738382682789,
+        "ambiguous_fraction": 0.17417162276975362
+      },
+      {
+        "trip_id": "00000020",
+        "mean_reference_offset_m": 8.631225914922105,
+        "ambiguous_fraction": 0.10327241818954526
+      },
+      {
+        "trip_id": "00000021",
+        "mean_reference_offset_m": 6.047078868804715,
+        "ambiguous_fraction": 0.053158461635937404
+      },
+      {
+        "trip_id": "00000022",
+        "mean_reference_offset_m": 5.22063972583594,
+        "ambiguous_fraction": 0.5274261603375527
+      },
+      {
+        "trip_id": "00000024",
+        "mean_reference_offset_m": 4.986135557559785,
+        "ambiguous_fraction": 0.11485642946317104
+      },
+      {
+        "trip_id": "00000025",
+        "mean_reference_offset_m": 5.862097143367545,
+        "ambiguous_fraction": 0.1280746395250212
+      },
+      {
+        "trip_id": "00000026",
+        "mean_reference_offset_m": 5.602607306103637,
+        "ambiguous_fraction": 0.628808864265928
+      },
+      {
+        "trip_id": "00000027",
+        "mean_reference_offset_m": 5.240099162216165,
+        "ambiguous_fraction": 0.18155619596541786
+      },
+      {
+        "trip_id": "00000028",
+        "mean_reference_offset_m": 8.010169805999869,
+        "ambiguous_fraction": 0.10575035063113604
+      },
+      {
+        "trip_id": "00000029",
+        "mean_reference_offset_m": 5.388522992471082,
+        "ambiguous_fraction": 0.21964529331514324
+      },
+      {
+        "trip_id": "00000031",
+        "mean_reference_offset_m": 5.259550278288692,
+        "ambiguous_fraction": 0.10129564193168433
+      },
+      {
+        "trip_id": "00000032",
+        "mean_reference_offset_m": 6.474595190581425,
+        "ambiguous_fraction": 0.12175324675324675
+      },
+      {
+        "trip_id": "00000033",
+        "mean_reference_offset_m": 80.96026563227228,
+        "ambiguous_fraction": 0.0458590006844627
+      },
+      {
+        "trip_id": "00000034",
+        "mean_reference_offset_m": 7.209512161091817,
+        "ambiguous_fraction": 0.17432208079690095
+      },
+      {
+        "trip_id": "00000035",
+        "mean_reference_offset_m": 5.034242589052102,
+        "ambiguous_fraction": 0.30797321972002434
+      },
+      {
+        "trip_id": "00000036",
+        "mean_reference_offset_m": 5.4470032887701825,
+        "ambiguous_fraction": 0.1564327485380117
+      },
+      {
+        "trip_id": "00000037",
+        "mean_reference_offset_m": 4.150738722302743,
+        "ambiguous_fraction": 0.206794682422452
+      },
+      {
+        "trip_id": "00000038",
+        "mean_reference_offset_m": 5.868753256556903,
+        "ambiguous_fraction": 0.1919191919191919
+      },
+      {
+        "trip_id": "00000039",
+        "mean_reference_offset_m": 4.893365568413846,
+        "ambiguous_fraction": 0.4022038567493113
+      },
+      {
+        "trip_id": "00000041",
+        "mean_reference_offset_m": 4.812858823433445,
+        "ambiguous_fraction": 0.26300294406280667
+      },
+      {
+        "trip_id": "00000042",
+        "mean_reference_offset_m": 4.53902637178545,
+        "ambiguous_fraction": 0.24202093293707197
+      },
+      {
+        "trip_id": "00000043",
+        "mean_reference_offset_m": 18.6930165148753,
+        "ambiguous_fraction": 0.16020671834625322
+      },
+      {
+        "trip_id": "00000044",
+        "mean_reference_offset_m": 5.621778696475086,
+        "ambiguous_fraction": 0.1794871794871795
+      },
+      {
+        "trip_id": "00000045",
+        "mean_reference_offset_m": 5.893236648684977,
+        "ambiguous_fraction": 0.175
+      },
+      {
+        "trip_id": "00000046",
+        "mean_reference_offset_m": 7.501903684165252,
+        "ambiguous_fraction": 0.1841541755888651
+      },
+      {
+        "trip_id": "00000047",
+        "mean_reference_offset_m": 5.26687932269025,
+        "ambiguous_fraction": 0.17059748427672955
+      },
+      {
+        "trip_id": "00000048",
+        "mean_reference_offset_m": 8.161268099801172,
+        "ambiguous_fraction": 0.33064516129032256
+      },
+      {
+        "trip_id": "00000050",
+        "mean_reference_offset_m": 6.073921677569031,
+        "ambiguous_fraction": 0.17374517374517376
+      },
+      {
+        "trip_id": "00000051",
+        "mean_reference_offset_m": 6.184273826472343,
+        "ambiguous_fraction": 0.27947154471544716
+      },
+      {
+        "trip_id": "00000053",
+        "mean_reference_offset_m": 5.172919257657123,
+        "ambiguous_fraction": 0.25383435582822084
+      },
+      {
+        "trip_id": "00000054",
+        "mean_reference_offset_m": 131.91694209215083,
+        "ambiguous_fraction": 0.29410241806037385
+      },
+      {
+        "trip_id": "00000055",
+        "mean_reference_offset_m": 4.596574429167735,
+        "ambiguous_fraction": 0.06351132686084142
+      },
+      {
+        "trip_id": "00000057",
+        "mean_reference_offset_m": 7.544557576689625,
+        "ambiguous_fraction": 0.16291793313069908
+      },
+      {
+        "trip_id": "00000058",
+        "mean_reference_offset_m": 5.054210530334407,
+        "ambiguous_fraction": 0.4090150250417362
+      },
+      {
+        "trip_id": "00000060",
+        "mean_reference_offset_m": 6.783855049854832,
+        "ambiguous_fraction": 0.4309133489461358
+      },
+      {
+        "trip_id": "00000061",
+        "mean_reference_offset_m": 7.754468146081782,
+        "ambiguous_fraction": 0.6132867132867132
+      },
+      {
+        "trip_id": "00000062",
+        "mean_reference_offset_m": 5.626866729845622,
+        "ambiguous_fraction": 0.16370633510953228
+      },
+      {
+        "trip_id": "00000063",
+        "mean_reference_offset_m": 5.357677753809381,
+        "ambiguous_fraction": 0.2531463502337289
+      },
+      {
+        "trip_id": "00000064",
+        "mean_reference_offset_m": 5.965549675150988,
+        "ambiguous_fraction": 0.19445771619684663
+      },
+      {
+        "trip_id": "00000066",
+        "mean_reference_offset_m": 9.315127745033015,
+        "ambiguous_fraction": 0.05132947976878613
+      },
+      {
+        "trip_id": "00000068",
+        "mean_reference_offset_m": 5.0670063130945655,
+        "ambiguous_fraction": 0.2757697456492637
+      },
+      {
+        "trip_id": "00000069",
+        "mean_reference_offset_m": 5.618981267545315,
+        "ambiguous_fraction": 0.3076923076923077
+      },
+      {
+        "trip_id": "00000070",
+        "mean_reference_offset_m": 5.25366642618846,
+        "ambiguous_fraction": 0.197495183044316
+      },
+      {
+        "trip_id": "00000071",
+        "mean_reference_offset_m": 4.714142019542567,
+        "ambiguous_fraction": 0.13647058823529412
+      },
+      {
+        "trip_id": "00000072",
+        "mean_reference_offset_m": 6.207406402422738,
+        "ambiguous_fraction": 0.38390092879256965
+      },
+      {
+        "trip_id": "00000074",
+        "mean_reference_offset_m": 6.0299673229649455,
+        "ambiguous_fraction": 0.1316744427164334
+      },
+      {
+        "trip_id": "00000075",
+        "mean_reference_offset_m": 4.939584248712344,
+        "ambiguous_fraction": 0.3918918918918919
+      },
+      {
+        "trip_id": "00000078",
+        "mean_reference_offset_m": 6.071994657562783,
+        "ambiguous_fraction": 0.27363355104847026
+      },
+      {
+        "trip_id": "00000079",
+        "mean_reference_offset_m": 5.376186794080135,
+        "ambiguous_fraction": 0.18867924528301888
+      },
+      {
+        "trip_id": "00000080",
+        "mean_reference_offset_m": 10.076363591578366,
+        "ambiguous_fraction": 0.1362549800796813
+      },
+      {
+        "trip_id": "00000081",
+        "mean_reference_offset_m": 8.527297740142158,
+        "ambiguous_fraction": 0.6026674937965261
+      },
+      {
+        "trip_id": "00000082",
+        "mean_reference_offset_m": 4.930893313115253,
+        "ambiguous_fraction": 0.08294283036551078
+      },
+      {
+        "trip_id": "00000083",
+        "mean_reference_offset_m": 6.511705225783463,
+        "ambiguous_fraction": 0.17650962176509621
+      },
+      {
+        "trip_id": "00000084",
+        "mean_reference_offset_m": 10.546949365140176,
+        "ambiguous_fraction": 0.2049778554051525
+      },
+      {
+        "trip_id": "00000085",
+        "mean_reference_offset_m": 6.195777817565594,
+        "ambiguous_fraction": 0.2802197802197802
+      },
+      {
+        "trip_id": "00000086",
+        "mean_reference_offset_m": 4.949015374467315,
+        "ambiguous_fraction": 0.08737629736905624
+      },
+      {
+        "trip_id": "00000088",
+        "mean_reference_offset_m": 4.524416825269959,
+        "ambiguous_fraction": 0.24771689497716895
+      },
+      {
+        "trip_id": "00000089",
+        "mean_reference_offset_m": 5.591635371922996,
+        "ambiguous_fraction": 0.2907166123778502
+      },
+      {
+        "trip_id": "00000090",
+        "mean_reference_offset_m": 5.281110512482011,
+        "ambiguous_fraction": 0.40671641791044777
+      },
+      {
+        "trip_id": "00000092",
+        "mean_reference_offset_m": 5.122998173266578,
+        "ambiguous_fraction": 0.27318803852002027
+      },
+      {
+        "trip_id": "00000093",
+        "mean_reference_offset_m": 8.712891348406675,
+        "ambiguous_fraction": 0.30305532617671344
+      },
+      {
+        "trip_id": "00000095",
+        "mean_reference_offset_m": 4.82480819578357,
+        "ambiguous_fraction": 0.5738233397807866
+      },
+      {
+        "trip_id": "00000096",
+        "mean_reference_offset_m": 8.368335447887102,
+        "ambiguous_fraction": 0.22011617242433507
+      },
+      {
+        "trip_id": "00000097",
+        "mean_reference_offset_m": 4.371866163147608,
+        "ambiguous_fraction": 0.12931034482758622
+      },
+      {
+        "trip_id": "00000098",
+        "mean_reference_offset_m": 6.237485348610606,
+        "ambiguous_fraction": 0.10995702005730659
+      },
+      {
+        "trip_id": "00000099",
+        "mean_reference_offset_m": 8.27616221859761,
+        "ambiguous_fraction": 0.3466838931955211
+      }
+    ],
+    "student_test": [
+      {
+        "trip_id": "00000000",
+        "mean_reference_offset_m": 7.016482986087737,
+        "ambiguous_fraction": 0.06192568917299241
+      },
+      {
+        "trip_id": "00000007",
+        "mean_reference_offset_m": 7.2758478042694685,
+        "ambiguous_fraction": 0.04283604135893648
+      },
+      {
+        "trip_id": "00000009",
+        "mean_reference_offset_m": 6.2501240093652894,
+        "ambiguous_fraction": 0.34413727359389895
+      },
+      {
+        "trip_id": "00000040",
+        "mean_reference_offset_m": 6.051283735903649,
+        "ambiguous_fraction": 0.0974958263772955
+      },
+      {
+        "trip_id": "00000052",
+        "mean_reference_offset_m": 5.039082478788025,
+        "ambiguous_fraction": 0.19083969465648856
+      },
+      {
+        "trip_id": "00000056",
+        "mean_reference_offset_m": 6.00067586834423,
+        "ambiguous_fraction": 0.41611925214754925
+      },
+      {
+        "trip_id": "00000065",
+        "mean_reference_offset_m": 5.05218034807519,
+        "ambiguous_fraction": 0.41796875
+      },
+      {
+        "trip_id": "00000076",
+        "mean_reference_offset_m": 7.893051446543832,
+        "ambiguous_fraction": 0.31090174966352624
+      },
+      {
+        "trip_id": "00000077",
+        "mean_reference_offset_m": 7.201642571805092,
+        "ambiguous_fraction": 0.3513167987726924
+      },
+      {
+        "trip_id": "00000091",
+        "mean_reference_offset_m": 5.115881820680353,
+        "ambiguous_fraction": 0.2334096109839817
+      }
+    ]
+  },
+  "selected_by_group_cv": "hist_gradient_boosting",
+  "tuning": {
+    "top1_accuracy": 0.857,
+    "observation_arc_macro_f1": 0.7819794543144571,
+    "conditional_candidate_log_loss": 0.3927528003420143,
+    "candidate_miss_rate": 0.002,
+    "observations": 2000,
+    "scoring_seconds": 0.02807195899367798,
+    "fit_seconds": 0.3232142499909969,
+    "best_params": {
+      "learning_rate": 0.1360140223354204,
+      "max_leaf_nodes": 27,
+      "l2_regularization": 1.4867578983092737
+    },
+    "mean_cv_candidate_binary_macro_f1": 0.90252348865229
+  }
+}

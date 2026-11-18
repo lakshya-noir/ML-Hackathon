@@ -1,0 +1,38 @@
+{
+  "scope": "post-selection reporting measurement; no refitting or setting changes",
+  "partition": "student_test",
+  "observations": 2000,
+  "trip_count": 10,
+  "sample": "same original 200 evenly spaced observations per trip, cached original candidate features",
+  "route_policy": "classifier argmax plus directed shortest-path connectors; build_route default 1500m limit",
+  "aggregation": "continuity is an equal-weight mean over the ten sampled trip sequences",
+  "definition": "1 - (pieces - 1) / max(1, consecutive distinct predicted arc pairs)",
+  "top1_reproduces_original": true,
+  "models": {
+    "logistic": {
+      "sampled_top1": 0.8515,
+      "mean_trip_route_continuity": 0.9849873815028681,
+      "mean_trip_route_pieces": 2.9
+    },
+    "gaussian_nb": {
+      "sampled_top1": 0.841,
+      "mean_trip_route_continuity": 0.9857956438968689,
+      "mean_trip_route_pieces": 2.8
+    },
+    "decision_tree": {
+      "sampled_top1": 0.8545,
+      "mean_trip_route_continuity": 0.9872878615711713,
+      "mean_trip_route_pieces": 2.7
+    },
+    "random_forest": {
+      "sampled_top1": 0.8555,
+      "mean_trip_route_continuity": 0.9871693233712902,
+      "mean_trip_route_pieces": 2.7
+    },
+    "hist_gradient_boosting": {
+      "sampled_top1": 0.8585,
+      "mean_trip_route_continuity": 0.9852632081967341,
+      "mean_trip_route_pieces": 2.9
+    }
+  }
+}

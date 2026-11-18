@@ -1,0 +1,50 @@
+[
+  {
+    "trip_id": "00000052",
+    "partition": "student_test",
+    "selection_reason": "shortest student-test trip",
+    "observations": 262,
+    "surrogate_top1_agreement": 0.950381679389313,
+    "candidate_miss_rate": 0.0,
+    "ambiguous_fraction": 0.19083969465648856,
+    "reference_offset_median_m": 4.172342561571274,
+    "reference_offset_p95_m": 12.662088958925478,
+    "nonpositive_time_steps": 0,
+    "gaps_over_1_second": 4,
+    "max_time_gap_seconds": 2.0,
+    "model": "artifacts/models/tuned",
+    "label_method": "nearest reference geometry surrogate, not verified pointwise ground truth"
+  },
+  {
+    "trip_id": "00000056",
+    "partition": "student_test",
+    "selection_reason": "longest student-test trip",
+    "observations": 3958,
+    "surrogate_top1_agreement": 0.8092470944921678,
+    "candidate_miss_rate": 0.0015159171298635675,
+    "ambiguous_fraction": 0.41611925214754925,
+    "reference_offset_median_m": 4.509293189170238,
+    "reference_offset_p95_m": 14.296695060491748,
+    "nonpositive_time_steps": 0,
+    "gaps_over_1_second": 41,
+    "max_time_gap_seconds": 3.0,
+    "model": "artifacts/models/tuned",
+    "label_method": "nearest reference geometry surrogate, not verified pointwise ground truth"
+  },
+  {
+    "trip_id": "00000065",
+    "partition": "student_test",
+    "selection_reason": "highest recorded reference ambiguity among remaining student-test trips",
+    "observations": 768,
+    "surrogate_top1_agreement": 0.7994791666666666,
+    "candidate_miss_rate": 0.0013020833333333333,
+    "ambiguous_fraction": 0.41796875,
+    "reference_offset_median_m": 4.379855834383557,
+    "reference_offset_p95_m": 11.691876965555121,
+    "nonpositive_time_steps": 0,
+    "gaps_over_1_second": 11,
+    "max_time_gap_seconds": 210.0,
+    "model": "artifacts/models/tuned",
+    "label_method": "nearest reference geometry surrogate, not verified pointwise ground truth"
+  }
+]

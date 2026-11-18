@@ -1,0 +1,75 @@
+{
+  "partition": "student_test",
+  "trips": [
+    "00000000",
+    "00000007",
+    "00000009",
+    "00000040",
+    "00000052",
+    "00000056",
+    "00000065",
+    "00000076",
+    "00000077",
+    "00000091"
+  ],
+  "model_dir": "final_monotone_v1",
+  "decoder_config": {
+    "sigma_m": 10.0,
+    "beta_m": 5.0,
+    "clf_weight": 0.5,
+    "unreachable_logp": -40.0,
+    "gap_s": 10.0,
+    "outlier_m": 120.0,
+    "backtrack_tol_m": 15.0,
+    "search_base_m": 400.0,
+    "search_cap_m": 15000.0
+  },
+  "label_method": "monotone route alignment (pathsnap/decoder/evaluation.py)",
+  "release": {
+    "model_sha256": "457a1520c1d9e9da2297a946d1d588f8a564dc7ef6c384240bff8bba83e1b3dd",
+    "decoder_config_sha256": "fba4744deb30176013f6b226c61c96bf6892d7c3599252a5791293968e94f4fc",
+    "release_id": "pathsnap-monotone-v1"
+  },
+  "aggregation": "unweighted mean over trip-level metrics",
+  "observations": 19160,
+  "metric_definitions": {
+    "point_accuracy": "share of observations whose predicted arc equals the monotone-aligned reference arc (observation Top-1)",
+    "point_macro_f1": "macro F1 over reference arc IDs at observation level",
+    "route_precision/recall/f1": "length-weighted overlap between predicted route arcs and .route arcs",
+    "route_continuity": "1 - (route pieces - 1) / (consecutive distinct matched arc pairs); 1.0 = one drivable route",
+    "adjacency_rate": "share of consecutive distinct matched arcs that share a node directly",
+    "candidate_miss_rate": "share of observations whose reference arc is not among candidates"
+  },
+  "means": {
+    "classifier_only": {
+      "n_obs": 1916.0,
+      "pipeline_s": 0.507,
+      "hmm_break_steps": 0.0,
+      "point_accuracy": 0.8748,
+      "point_macro_f1": 0.9207,
+      "route_precision": 0.7414,
+      "route_recall": 0.9973,
+      "route_f1": 0.8422,
+      "route_continuity": 0.9797,
+      "route_pieces": 17.7,
+      "adjacency_rate": 0.784,
+      "unmatched_observations": 0.0,
+      "candidate_miss_rate": 0.0038
+    },
+    "hmm_viterbi": {
+      "n_obs": 1916.0,
+      "pipeline_s": 0.507,
+      "hmm_break_steps": 0.0,
+      "point_accuracy": 0.9195,
+      "point_macro_f1": 0.9619,
+      "route_precision": 0.9421,
+      "route_recall": 0.9971,
+      "route_f1": 0.968,
+      "route_continuity": 0.9987,
+      "route_pieces": 1.6,
+      "adjacency_rate": 0.9076,
+      "unmatched_observations": 0.0,
+      "candidate_miss_rate": 0.0038
+    }
+  }
+}

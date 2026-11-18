@@ -1,0 +1,127 @@
+{
+  "scope": "candidate binary classification; original 200-observation-per-trip experiment",
+  "label_method": "nearest reference-route geometry surrogate; not verified pointwise ground truth",
+  "no_refitting": true,
+  "rows": [
+    {
+      "model": "logistic",
+      "partition": "train",
+      "threshold": 0.5,
+      "candidate_rows": 115090,
+      "tn": 96788,
+      "fp": 2760,
+      "fn": 3489,
+      "tp": 12053
+    },
+    {
+      "model": "logistic",
+      "partition": "student_test",
+      "threshold": 0.5,
+      "candidate_rows": 14034,
+      "tn": 11714,
+      "fp": 324,
+      "fn": 387,
+      "tp": 1609
+    },
+    {
+      "model": "gaussian_nb",
+      "partition": "train",
+      "threshold": 0.5,
+      "candidate_rows": 115090,
+      "tn": 86648,
+      "fp": 12900,
+      "fn": 1776,
+      "tp": 13766
+    },
+    {
+      "model": "gaussian_nb",
+      "partition": "student_test",
+      "threshold": 0.5,
+      "candidate_rows": 14034,
+      "tn": 10366,
+      "fp": 1672,
+      "fn": 208,
+      "tp": 1788
+    },
+    {
+      "model": "decision_tree",
+      "partition": "train",
+      "threshold": 0.5,
+      "candidate_rows": 115090,
+      "tn": 97344,
+      "fp": 2204,
+      "fn": 2639,
+      "tp": 12903
+    },
+    {
+      "model": "decision_tree",
+      "partition": "student_test",
+      "threshold": 0.5,
+      "candidate_rows": 14034,
+      "tn": 11770,
+      "fp": 268,
+      "fn": 333,
+      "tp": 1663
+    },
+    {
+      "model": "random_forest",
+      "partition": "train",
+      "threshold": 0.5,
+      "candidate_rows": 115090,
+      "tn": 97942,
+      "fp": 1606,
+      "fn": 2041,
+      "tp": 13501
+    },
+    {
+      "model": "random_forest",
+      "partition": "student_test",
+      "threshold": 0.5,
+      "candidate_rows": 14034,
+      "tn": 11785,
+      "fp": 253,
+      "fn": 338,
+      "tp": 1658
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "partition": "train",
+      "threshold": 0.5,
+      "candidate_rows": 115090,
+      "tn": 97260,
+      "fp": 2288,
+      "fn": 2621,
+      "tp": 12921
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "partition": "student_test",
+      "threshold": 0.5,
+      "candidate_rows": 14034,
+      "tn": 11781,
+      "fp": 257,
+      "fn": 312,
+      "tp": 1684
+    },
+    {
+      "model": "tuned",
+      "partition": "train",
+      "threshold": 0.5,
+      "candidate_rows": 115090,
+      "tn": 97310,
+      "fp": 2238,
+      "fn": 2473,
+      "tp": 13069
+    },
+    {
+      "model": "tuned",
+      "partition": "student_test",
+      "threshold": 0.5,
+      "candidate_rows": 14034,
+      "tn": 11768,
+      "fp": 270,
+      "fn": 304,
+      "tp": 1692
+    }
+  ]
+}

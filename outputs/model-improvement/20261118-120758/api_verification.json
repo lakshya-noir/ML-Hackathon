@@ -1,0 +1,425 @@
+{
+  "scope": "local HTTP checks; not a browser render or physical two-laptop test",
+  "api": "http://127.0.0.1:8001",
+  "ui": "http://127.0.0.1:5500",
+  "model_loaded": true,
+  "model_dir": "outputs/model-improvement/20261118-120758/monotone_more",
+  "ui_assets_and_cors": "passed",
+  "trips": [
+    {
+      "trip_id": "00000000",
+      "n_observations": 2503,
+      "cached": false,
+      "timing_ms": {
+        "load": 2.2,
+        "candidates": 308.9,
+        "scoring": 25.9,
+        "lattice": 79.7,
+        "viterbi_and_route": 16.9,
+        "prediction_total": 433.6,
+        "evaluation": 43.3
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.9652,
+          "point_macro_f1": 0.9711,
+          "route_precision": 0.9901,
+          "route_recall": 0.9982,
+          "route_f1": 0.9941,
+          "route_continuity": 0.9902,
+          "route_pieces": 3,
+          "adjacency_rate": 0.9415,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.002
+        },
+        "classifier_only": {
+          "point_accuracy": 0.9429,
+          "point_macro_f1": 0.9391,
+          "route_precision": 0.8798,
+          "route_recall": 0.9991,
+          "route_f1": 0.9357,
+          "route_continuity": 0.9576,
+          "route_pieces": 13,
+          "adjacency_rate": 0.7244,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.002
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000007",
+      "n_observations": 1354,
+      "cached": false,
+      "timing_ms": {
+        "load": 1.9,
+        "candidates": 158.4,
+        "scoring": 9.7,
+        "lattice": 41.2,
+        "viterbi_and_route": 8.0,
+        "prediction_total": 219.2,
+        "evaluation": 21.8
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.8826,
+          "point_macro_f1": 0.9905,
+          "route_precision": 0.9541,
+          "route_recall": 1.0,
+          "route_f1": 0.9765,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.992,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0
+        },
+        "classifier_only": {
+          "point_accuracy": 0.9143,
+          "point_macro_f1": 0.9913,
+          "route_precision": 0.962,
+          "route_recall": 0.993,
+          "route_f1": 0.9773,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.9736,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000009",
+      "n_observations": 1049,
+      "cached": false,
+      "timing_ms": {
+        "load": 2.7,
+        "candidates": 186.8,
+        "scoring": 10.6,
+        "lattice": 139.6,
+        "viterbi_and_route": 28.4,
+        "prediction_total": 368.0,
+        "evaluation": 30.1
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.9104,
+          "point_macro_f1": 0.9568,
+          "route_precision": 0.9192,
+          "route_recall": 0.9887,
+          "route_f1": 0.9527,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.8469,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0191
+        },
+        "classifier_only": {
+          "point_accuracy": 0.8608,
+          "point_macro_f1": 0.9295,
+          "route_precision": 0.7022,
+          "route_recall": 0.9994,
+          "route_f1": 0.8249,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.7403,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0191
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000040",
+      "n_observations": 2995,
+      "cached": false,
+      "timing_ms": {
+        "load": 3.1,
+        "candidates": 395.7,
+        "scoring": 20.2,
+        "lattice": 108.0,
+        "viterbi_and_route": 19.2,
+        "prediction_total": 546.2,
+        "evaluation": 64.1
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.9499,
+          "point_macro_f1": 0.9752,
+          "route_precision": 0.9966,
+          "route_recall": 1.0,
+          "route_f1": 0.9983,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.9669,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0
+        },
+        "classifier_only": {
+          "point_accuracy": 0.9175,
+          "point_macro_f1": 0.9444,
+          "route_precision": 0.7816,
+          "route_recall": 0.9994,
+          "route_f1": 0.8772,
+          "route_continuity": 0.9892,
+          "route_pieces": 7,
+          "adjacency_rate": 0.8291,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000052",
+      "n_observations": 262,
+      "cached": false,
+      "timing_ms": {
+        "load": 1.8,
+        "candidates": 47.1,
+        "scoring": 4.1,
+        "lattice": 17.2,
+        "viterbi_and_route": 3.6,
+        "prediction_total": 73.8,
+        "evaluation": 6.0
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 1.0,
+          "point_macro_f1": 1.0,
+          "route_precision": 1.0,
+          "route_recall": 0.9969,
+          "route_f1": 0.9984,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.8765,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0
+        },
+        "classifier_only": {
+          "point_accuracy": 0.9656,
+          "point_macro_f1": 0.9455,
+          "route_precision": 0.9228,
+          "route_recall": 0.9969,
+          "route_f1": 0.9584,
+          "route_continuity": 0.9762,
+          "route_pieces": 3,
+          "adjacency_rate": 0.8571,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000056",
+      "n_observations": 3958,
+      "cached": false,
+      "timing_ms": {
+        "load": 3.9,
+        "candidates": 627.4,
+        "scoring": 30.3,
+        "lattice": 278.5,
+        "viterbi_and_route": 48.0,
+        "prediction_total": 988.2,
+        "evaluation": 215.2
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.9495,
+          "point_macro_f1": 0.9706,
+          "route_precision": 0.9551,
+          "route_recall": 0.999,
+          "route_f1": 0.9766,
+          "route_continuity": 0.9967,
+          "route_pieces": 5,
+          "adjacency_rate": 0.8882,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0051
+        },
+        "classifier_only": {
+          "point_accuracy": 0.8919,
+          "point_macro_f1": 0.9146,
+          "route_precision": 0.8115,
+          "route_recall": 0.9918,
+          "route_f1": 0.8926,
+          "route_continuity": 0.906,
+          "route_pieces": 139,
+          "adjacency_rate": 0.7473,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0051
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000065",
+      "n_observations": 768,
+      "cached": false,
+      "timing_ms": {
+        "load": 2.7,
+        "candidates": 146.7,
+        "scoring": 7.4,
+        "lattice": 67.4,
+        "viterbi_and_route": 10.2,
+        "prediction_total": 234.4,
+        "evaluation": 14.4
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.8997,
+          "point_macro_f1": 0.9615,
+          "route_precision": 0.8103,
+          "route_recall": 1.0,
+          "route_f1": 0.8952,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.9085,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0013
+        },
+        "classifier_only": {
+          "point_accuracy": 0.8398,
+          "point_macro_f1": 0.8863,
+          "route_precision": 0.5398,
+          "route_recall": 1.0,
+          "route_f1": 0.7011,
+          "route_continuity": 0.9907,
+          "route_pieces": 3,
+          "adjacency_rate": 0.7767,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0013
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000076",
+      "n_observations": 1486,
+      "cached": false,
+      "timing_ms": {
+        "load": 5.7,
+        "candidates": 402.4,
+        "scoring": 12.6,
+        "lattice": 299.7,
+        "viterbi_and_route": 65.5,
+        "prediction_total": 785.8,
+        "evaluation": 39.8
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.9455,
+          "point_macro_f1": 0.9264,
+          "route_precision": 0.906,
+          "route_recall": 0.9931,
+          "route_f1": 0.9476,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.8497,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0087
+        },
+        "classifier_only": {
+          "point_accuracy": 0.8742,
+          "point_macro_f1": 0.8714,
+          "route_precision": 0.5457,
+          "route_recall": 0.997,
+          "route_f1": 0.7053,
+          "route_continuity": 0.998,
+          "route_pieces": 2,
+          "adjacency_rate": 0.6795,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0087
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000077",
+      "n_observations": 3911,
+      "cached": false,
+      "timing_ms": {
+        "load": 2.8,
+        "candidates": 580.2,
+        "scoring": 31.0,
+        "lattice": 239.6,
+        "viterbi_and_route": 32.0,
+        "prediction_total": 885.6,
+        "evaluation": 77.8
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.763,
+          "point_macro_f1": 0.9286,
+          "route_precision": 0.9138,
+          "route_recall": 1.0,
+          "route_f1": 0.955,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.9264,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.002
+        },
+        "classifier_only": {
+          "point_accuracy": 0.6801,
+          "point_macro_f1": 0.8863,
+          "route_precision": 0.5938,
+          "route_recall": 1.0,
+          "route_f1": 0.7452,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.8207,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.002
+        },
+        "label_method": "monotone route alignment"
+      }
+    },
+    {
+      "trip_id": "00000091",
+      "n_observations": 874,
+      "cached": false,
+      "timing_ms": {
+        "load": 2.6,
+        "candidates": 157.7,
+        "scoring": 10.5,
+        "lattice": 78.8,
+        "viterbi_and_route": 13.0,
+        "prediction_total": 262.5,
+        "evaluation": 18.4
+      },
+      "metrics": {
+        "hmm": {
+          "point_accuracy": 0.9291,
+          "point_macro_f1": 0.9378,
+          "route_precision": 0.9756,
+          "route_recall": 0.9956,
+          "route_f1": 0.9855,
+          "route_continuity": 1.0,
+          "route_pieces": 1,
+          "adjacency_rate": 0.8794,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0
+        },
+        "classifier_only": {
+          "point_accuracy": 0.8604,
+          "point_macro_f1": 0.8989,
+          "route_precision": 0.6749,
+          "route_recall": 0.996,
+          "route_f1": 0.8046,
+          "route_continuity": 0.9794,
+          "route_pieces": 7,
+          "adjacency_rate": 0.6907,
+          "unmatched_observations": 0,
+          "candidate_miss_rate": 0.0
+        },
+        "label_method": "monotone route alignment"
+      }
+    }
+  ],
+  "model_sha256": "457a1520c1d9e9da2297a946d1d588f8a564dc7ef6c384240bff8bba83e1b3dd",
+  "unknown_trip_404": "passed",
+  "experiment_metric_parity": "passed for both modes, every recorded metric, all ten trips (API rounding tolerance)",
+  "live_baseline_artifact_unchanged": true,
+  "cache_and_fresh_consistency": "passed"
+}

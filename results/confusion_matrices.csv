@@ -1,0 +1,13 @@
+model,partition,threshold,candidate_rows,tn,fp,fn,tp
+logistic,train,0.5,115090,96788,2760,3489,12053
+logistic,student_test,0.5,14034,11714,324,387,1609
+gaussian_nb,train,0.5,115090,86648,12900,1776,13766
+gaussian_nb,student_test,0.5,14034,10366,1672,208,1788
+decision_tree,train,0.5,115090,97344,2204,2639,12903
+decision_tree,student_test,0.5,14034,11770,268,333,1663
+random_forest,train,0.5,115090,97942,1606,2041,13501
+random_forest,student_test,0.5,14034,11785,253,338,1658
+hist_gradient_boosting,train,0.5,115090,97260,2288,2621,12921
+hist_gradient_boosting,student_test,0.5,14034,11781,257,312,1684
+tuned,train,0.5,115090,97310,2238,2473,13069
+tuned,student_test,0.5,14034,11768,270,304,1692

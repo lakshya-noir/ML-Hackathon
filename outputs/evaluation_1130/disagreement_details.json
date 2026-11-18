@@ -1,0 +1,32 @@
+[
+  {
+    "trip_id": "00000052",
+    "observation_index": 4,
+    "predicted_arc": 2407,
+    "surrogate_arc": 1680,
+    "reversed_endpoints": false,
+    "reference_offset_m": 11.18386299747432,
+    "candidate_miss": false,
+    "ambiguous": false
+  },
+  {
+    "trip_id": "00000056",
+    "observation_index": 214,
+    "predicted_arc": 23774,
+    "surrogate_arc": 13975,
+    "reversed_endpoints": false,
+    "reference_offset_m": 12.238288998963567,
+    "candidate_miss": true,
+    "ambiguous": true
+  },
+  {
+    "trip_id": "00000065",
+    "observation_index": 267,
+    "predicted_arc": 1433,
+    "surrogate_arc": 1426,
+    "reversed_endpoints": false,
+    "reference_offset_m": 21.788121453054824,
+    "candidate_miss": true,
+    "ambiguous": false
+  }
+]

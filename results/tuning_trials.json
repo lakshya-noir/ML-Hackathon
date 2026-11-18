@@ -1,0 +1,206 @@
+[
+  {
+    "number": 0,
+    "params": {
+      "learning_rate": 0.05514718587869894,
+      "max_leaf_nodes": 30,
+      "l2_regularization": 0.45705630998014507
+    },
+    "value": 0.9023117419314737,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.904135053807521,
+        0.8920285905494749,
+        0.9107715814374249
+      ]
+    }
+  },
+  {
+    "number": 1,
+    "params": {
+      "learning_rate": 0.10118287286592736,
+      "max_leaf_nodes": 10,
+      "l2_regularization": 0.000602521573620386
+    },
+    "value": 0.9006160738653665,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9049259528644844,
+        0.888588036185515,
+        0.9083342325460999
+      ]
+    }
+  },
+  {
+    "number": 2,
+    "params": {
+      "learning_rate": 0.023406777359270506,
+      "max_leaf_nodes": 28,
+      "l2_regularization": 0.10129197956845731
+    },
+    "value": 0.8989114927348951,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9026448687291495,
+        0.8872246908582069,
+        0.906864918617329
+      ]
+    }
+  },
+  {
+    "number": 3,
+    "params": {
+      "learning_rate": 0.13607801490147406,
+      "max_leaf_nodes": 7,
+      "l2_regularization": 7.0721141314722304
+    },
+    "value": 0.9009049827784277,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.904447615361555,
+        0.8901661081420618,
+        0.9081012248316661
+      ]
+    }
+  },
+  {
+    "number": 4,
+    "params": {
+      "learning_rate": 0.1905717443408048,
+      "max_leaf_nodes": 12,
+      "l2_regularization": 0.0008111941985431928
+    },
+    "value": 0.9009474785159979,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9046568166812003,
+        0.8888713069655201,
+        0.9093143119012734
+      ]
+    }
+  },
+  {
+    "number": 5,
+    "params": {
+      "learning_rate": 0.03286475783941524,
+      "max_leaf_nodes": 14,
+      "l2_regularization": 0.042051564509138696
+    },
+    "value": 0.8999478524879628,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9031966148220869,
+        0.8877272676615633,
+        0.9089196749802382
+      ]
+    }
+  },
+  {
+    "number": 6,
+    "params": {
+      "learning_rate": 0.06442237870408891,
+      "max_leaf_nodes": 14,
+      "l2_regularization": 0.11462107403425029
+    },
+    "value": 0.901786617640675,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9048095567698939,
+        0.8910229006296977,
+        0.9095273955224337
+      ]
+    }
+  },
+  {
+    "number": 7,
+    "params": {
+      "learning_rate": 0.029180149047462245,
+      "max_leaf_nodes": 14,
+      "l2_regularization": 0.0067890532716984855
+    },
+    "value": 0.8990882722975521,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9029966623461687,
+        0.8869981119303072,
+        0.9072700426161804
+      ]
+    }
+  },
+  {
+    "number": 8,
+    "params": {
+      "learning_rate": 0.06877172495876589,
+      "max_leaf_nodes": 26,
+      "l2_regularization": 0.0009962513222055117
+    },
+    "value": 0.9019388271975234,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9042310357168579,
+        0.8910100742498912,
+        0.9105753716258213
+      ]
+    }
+  },
+  {
+    "number": 9,
+    "params": {
+      "learning_rate": 0.08050384505270129,
+      "max_leaf_nodes": 21,
+      "l2_regularization": 0.00017070728830306665
+    },
+    "value": 0.9020603276068185,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9047901102618492,
+        0.8912906968206318,
+        0.9101001757379745
+      ]
+    }
+  },
+  {
+    "number": 10,
+    "params": {
+      "learning_rate": 0.03474223943935098,
+      "max_leaf_nodes": 22,
+      "l2_regularization": 5.317196633982099
+    },
+    "value": 0.9013456609505379,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9038910860920009,
+        0.889963216313834,
+        0.9101826804457787
+      ]
+    }
+  },
+  {
+    "number": 11,
+    "params": {
+      "learning_rate": 0.1360140223354204,
+      "max_leaf_nodes": 27,
+      "l2_regularization": 1.4867578983092737
+    },
+    "value": 0.90252348865229,
+    "state": "COMPLETE",
+    "fold_scores": {
+      "fold_scores": [
+        0.9046781398118287,
+        0.891236342825082,
+        0.9116559833199596
+      ]
+    }
+  }
+]
