@@ -101,8 +101,8 @@ python scripts/verify_demo.py --api http://127.0.0.1:8003 --expected-trips-dir s
 
 Training/report commands and cache/study precautions are in [REPRODUCING.md](docs/REPRODUCING.md). Reproduce in a separate checkout to preserve retained records. Never overwrite the frozen release just to make a test pass.
 
-## Team and assistance
+## Team 
 
-Team: Lakshya - PES2UG24CS250, Nakul - PES2UG24CS298, Nikhil - PES2UG24CS253 and Mahesh - PES2UG24CS258. [CONTRIBUTING.md](CONTRIBUTING.md) explains responsibilities and genuine contribution recording. Codex and Claude Code assisted implementation, debugging and documentation; actual experiments ran locally. Members remain responsible for reviewing and understanding the submission. Preserve authentic authorship; do not invent commits or results.
+Team: Lakshya - PES2UG24CS250, Nakul - PES2UG24CS298, Nikhil - PES2UG24CS253 and Mahesh - PES2UG24CS258.
 
 Leaflet 1.9.4 is bundled under its [BSD 2-Clause license](ui/vendor/leaflet/LICENSE). Maps attribute OpenStreetMap. Reserved references never enter prediction or the evaluator UI.
